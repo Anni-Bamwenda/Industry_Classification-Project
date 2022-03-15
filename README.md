@@ -14,7 +14,7 @@ Throughout this project, we will create the following code/system:
 
 
 ## Software and Libraries
-* python
+* python  
 * NumPy
 * pandas
 * seaborn
@@ -41,6 +41,7 @@ We will also include lemmatization and stemming techniques to our dataset
 
 * Step 01: Creating Regex for emails, location, website/URLs
 Short for regular expression; a Regex is useful in extracting information from any text by searching for one or more matches of a specific search pattern
+
 Sample of Website/URL Regex
     def remove_url(text):
         url_model = re.compile(r'https?://(\w+|www)+\.[a-zA-Z]{2,4}')
@@ -69,19 +70,18 @@ Some of our operations were:
 We will look  into three stemming techniques namely snowball, porter stemmer and ARLStem Stemmer and use them to reduce all words to their stems.
 We will also perform lemmatization using nltk and spacy library.Unlike stemming, lemmatization reduces words to their base word,
 reducing the inflected words properly and ensuring that the root word belongs to the language.
-
-![This is an image](https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.googleapis.com%2Fdownload%2Fstorage%2Fv1%2Fb%2Fkaggle-forum-message-attachments%2Fo%2Finbox%252F4010658%252Ff0e0abfea00346cbdd6b6753a2cb1cb5%252F1_OTjdJlYF5vRIzpBfOw75KA.png%3Fgeneration%3D1600866066577474%26alt%3Dmedia&imgrefurl=https%3A%2F%2Fwww.kaggle.com%2Fgetting-started%2F186152&tbnid=9zYgY3qzaWvFjM&vet=12ahUKEwiww5qAmKT2AhV5GzQIHb5pBYEQMygHegUIARDFAQ..i&docid=3ubYqtZe4soz2M&w=875&h=492&q=images%20for%20text%20lemmatization&client=safari&ved=2ahUKEwiww5qAmKT2AhV5GzQIHb5pBYEQMygHegUIARDFAQ)
     
-![This is an image](https://miro.medium.com/max/1170/1*uVgEZI7UFLMjHqemI_MzGA.png)
+![This is an image](https://miro.medium.com/max/1400/1*ES5bt7IoInIq2YioQp2zcQ.png)
 
 * Step 04: Stopwords
 We will use NLTK Library to remove stop words by dividing  text into words and then remove the word if it exits in the list of stop words provided by NLTK.
 
 * Step 05: Tokenization
 It is basically splitting/segmenting a text into words/sentences. It cuts a text into pieces called tokens.These tokens help in understanding the context and developing the model for the NLP.
-For this project; We will use word_tokenize to split the text into words.
+For this project, We will use word_tokenize to split the text into words.
+
 This image illustrates what tokenization does to a text.
-![This is an image](https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.analyticsvidhya.com%2Fwp-content%2Fuploads%2F2019%2F11%2Ftokenization.png&imgrefurl=https%3A%2F%2Fwww.kaggle.com%2Ffuntowiczmo%2Fhugging-face-tutorials-training-tokenizer&tbnid=lxKOQYuH9gFl1M&vet=12ahUKEwiq1PqTmaT2AhWFATQIHTvkBZwQMygRegUIARDdAQ..i&docid=k9xpL3UHasrkPM&w=424&h=182&q=images%20for%20text%20tokenization&client=safari&ved=2ahUKEwiq1PqTmaT2AhWFATQIHTvkBZwQMygRegUIARDdAQ)
+![This is an image](https://miro.medium.com/max/1400/1*VLjKk9NpfDBRgk6FwhfCJA.jpeg)
 
 ### Word Representation: Vectorization
 It is easier for any programming language to understand textual data in the form of numerical value. 
@@ -98,7 +98,8 @@ We will specifically work with Hashing Vectorizer, TF-IDF and NMF methods to con
 Using this vectorizer that applies the hashing trick to encode tokens as numerical indexes.
 The hashing trick turns arbitrary features into indices in a vector or matrix. 
 It works by applying a hash function to the features and using their hash values as indices directly.
-![This is an image](https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F71%2FHash_table_4_1_1_0_0_0_0_LL.svg%2F267px-Hash_table_4_1_1_0_0_0_0_LL.svg.png&imgrefurl=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AHash_table_4_1_1_0_0_0_0_LL.svg&tbnid=gILsAWYrHN4XdM&vet=10CBMQxiAoAmoXChMIqKyCsJGl9gIVAAAAAB0AAAAAEBU..i&docid=m2LDBdt7aMPq3M&w=267&h=240&itg=1&q=image%20of%20hashing%20vectorizer&ved=0CBMQxiAoAmoXChMIqKyCsJGl9gIVAAAAAB0AAAAAEBU)
+
+![This is an image](https://upload.wikimedia.org/wikipedia/commons/7/71/Hash_table_4_1_1_0_0_0_0_LL.svg)
 
 * TFIDF Vector(Term Frequency — Inverse Document Frequency)
 We need the word counts of all the vocab words and the length of the document to compute TF. In case the term doesn’t exist in a particular document, that particular TF value will be 0 for that particular document. 
@@ -114,6 +115,11 @@ The document-topic matrix (U) and the topic-term matrix (W) — each populated w
 ### WordCloud
 * We will create WordClouds to see which words are the most frequent in a random sentence from the text
 
+A Sample Word Cloud generated from the health industry of the employer's dataset:
+
+![image](https://user-images.githubusercontent.com/67605413/158310999-0df576c8-7a7d-41cf-a0fe-d453f99975d8.png)
+
+
 ### Model Creation
 We will create models using nmf and wordvectors.
 
@@ -122,12 +128,15 @@ We will implement the nmf model on the wholde dataset and on top words then comp
 
 * For word vectors:
 We will create a embeddings representation of each industry using spacy and find the closest industry using doc_1.similarity(industry_1)
+
 The TfidfVectorizer will transform text to feature vectors that can be used as input to estimator.
+
 We will then pick top words from the tfidf and use them to find the industry with the highest similarity to each employer.
 
 
 ### Ranking using Cosine Similarity
-What cosine similarly does is that it will mark all the documents as vectors of tf-idf tokens and measures the similarity in cosine space (the angle between the vectors. 
+What cosine similarly does is that it will mark all the documents as vectors of tf-idf tokens and measures the similarity in cosine space (the angle between the vectors).
+
 ![This is an image](https://miro.medium.com/max/650/1*OGD_U_lnYFDdlQRXuOZ9vQ.png)
 
 ## Evaluation of text classification model
@@ -141,5 +150,11 @@ From the bar plot, we expect to see the predicted industries to be fairly distri
 We will also select random samples from the employer dasaset and see if their predicted industries closely match their real industries.
 
 If there's a close match, then our model is efficient.
+
+Below is an Image of the Industry Prediction using nmf on the whole dataset
+
+![image](https://user-images.githubusercontent.com/67605413/158310725-623117ab-efcd-4dd0-9407-1cf257aaa4ca.png)
+
+
 
 

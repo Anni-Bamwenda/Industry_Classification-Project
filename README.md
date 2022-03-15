@@ -108,8 +108,10 @@ In an extreme case, if all the words in the document are the same, then TF will 
 
 * NMF(Non-Negative Matrix Factorization)
 NMF utilizes linear algebra and the concept of matrix multiplication to reduce the features of the document-term matrix to create topics.
-Our NMF matrix will decompose the document-term matrix into two smaller matrices — 
-The document-topic matrix (U) and the topic-term matrix (W) — each populated with unnormalized probabilities.
+Our NMF matrix will decompose the document-term matrix into two smaller matrices —  The document-topic matrix (U) and the topic-term matrix (W) — each populated with unnormalized probabilities.
+
+This is how it works:
+
 ![This is an image](https://miro.medium.com/max/1400/1*ru1Ek9T3FjkehDkD8FZoHQ.jpeg)
 
 ### WordCloud

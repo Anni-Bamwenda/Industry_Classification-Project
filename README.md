@@ -39,17 +39,17 @@ The function will take a string as an input and will return the clean version of
 
 We will also include lemmatization and stemming techniques to our dataset
 
-    * Step 01: Creating Regex for emails, location, website/URLs
-    Short for regular expression; a Regex is useful in extracting information from any text by searching for one or more matches of a specific search pattern
-    Sample of Website/URL Regex
+* Step 01: Creating Regex for emails, location, website/URLs
+Short for regular expression; a Regex is useful in extracting information from any text by searching for one or more matches of a specific search pattern
+Sample of Website/URL Regex
     def remove_url(text):
         url_model = re.compile(r'https?://(\w+|www)+\.[a-zA-Z]{2,4}')
         return url_model.sub(r'', text)
     example = "My college website is http://whittier.edu"
     print(remove_url(example))
     
-    * Step 02: String Operations to remove punctuations and change text to lowercase
-    Some of our operations were:
+* Step 02: String Operations to remove punctuations and change text to lowercase
+Some of our operations were:
 
     ```
     #Punctuation
@@ -65,25 +65,25 @@ We will also include lemmatization and stemming techniques to our dataset
         return text.lower() if use_lower else text
     ```
     
-    * Step 03: Lemmatization and Stemming
-    We will look  into three stemming techniques namely snowball, porter stemmer and ARLStem Stemmer and use them to reduce all words to their stems.
-    We will also perform lemmatization using nltk and spacy library.Unlike stemming, lemmatization reduces words to their base word,
-    reducing the inflected words properly and ensuring that the root word belongs to the language.
+* Step 03: Lemmatization and Stemming
+We will look  into three stemming techniques namely snowball, porter stemmer and ARLStem Stemmer and use them to reduce all words to their stems.
+We will also perform lemmatization using nltk and spacy library.Unlike stemming, lemmatization reduces words to their base word,
+reducing the inflected words properly and ensuring that the root word belongs to the language.
 
-    ![This is an image](https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.googleapis.com%2Fdownload%2Fstorage%2Fv1%2Fb%2Fkaggle-forum-message-attachments%2Fo%2Finbox%252F4010658%252Ff0e0abfea00346cbdd6b6753a2cb1cb5%252F1_OTjdJlYF5vRIzpBfOw75KA.png%3Fgeneration%3D1600866066577474%26alt%3Dmedia&imgrefurl=https%3A%2F%2Fwww.kaggle.com%2Fgetting-started%2F186152&tbnid=9zYgY3qzaWvFjM&vet=12ahUKEwiww5qAmKT2AhV5GzQIHb5pBYEQMygHegUIARDFAQ..i&docid=3ubYqtZe4soz2M&w=875&h=492&q=images%20for%20text%20lemmatization&client=safari&ved=2ahUKEwiww5qAmKT2AhV5GzQIHb5pBYEQMygHegUIARDFAQ)
+![This is an image](https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.googleapis.com%2Fdownload%2Fstorage%2Fv1%2Fb%2Fkaggle-forum-message-attachments%2Fo%2Finbox%252F4010658%252Ff0e0abfea00346cbdd6b6753a2cb1cb5%252F1_OTjdJlYF5vRIzpBfOw75KA.png%3Fgeneration%3D1600866066577474%26alt%3Dmedia&imgrefurl=https%3A%2F%2Fwww.kaggle.com%2Fgetting-started%2F186152&tbnid=9zYgY3qzaWvFjM&vet=12ahUKEwiww5qAmKT2AhV5GzQIHb5pBYEQMygHegUIARDFAQ..i&docid=3ubYqtZe4soz2M&w=875&h=492&q=images%20for%20text%20lemmatization&client=safari&ved=2ahUKEwiww5qAmKT2AhV5GzQIHb5pBYEQMygHegUIARDFAQ)
     
-    ![This is an image](https://miro.medium.com/max/1170/1*uVgEZI7UFLMjHqemI_MzGA.png)
-    
-    * Step 04: Stopwords
-    We will use NLTK Library to remove stop words by dividing  text into words and then remove the word if it exits in the list of stop words provided by NLTK.
+![This is an image](https://miro.medium.com/max/1170/1*uVgEZI7UFLMjHqemI_MzGA.png)
 
-    * Step 05: Tokenization
-    It is basically splitting/segmenting a text into words/sentences. It cuts a text into pieces called tokens.These tokens help in understanding the context and developing the model for the NLP.
-    For this project; We will use word_tokenize to split the text into words.
-    This image illustrates what tokenization does to a text.
-    ![This is an image](https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.analyticsvidhya.com%2Fwp-content%2Fuploads%2F2019%2F11%2Ftokenization.png&imgrefurl=https%3A%2F%2Fwww.kaggle.com%2Ffuntowiczmo%2Fhugging-face-tutorials-training-tokenizer&tbnid=lxKOQYuH9gFl1M&vet=12ahUKEwiq1PqTmaT2AhWFATQIHTvkBZwQMygRegUIARDdAQ..i&docid=k9xpL3UHasrkPM&w=424&h=182&q=images%20for%20text%20tokenization&client=safari&ved=2ahUKEwiq1PqTmaT2AhWFATQIHTvkBZwQMygRegUIARDdAQ)
+* Step 04: Stopwords
+We will use NLTK Library to remove stop words by dividing  text into words and then remove the word if it exits in the list of stop words provided by NLTK.
 
-#### Word Representation: Vectorization
+* Step 05: Tokenization
+It is basically splitting/segmenting a text into words/sentences. It cuts a text into pieces called tokens.These tokens help in understanding the context and developing the model for the NLP.
+For this project; We will use word_tokenize to split the text into words.
+This image illustrates what tokenization does to a text.
+![This is an image](https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.analyticsvidhya.com%2Fwp-content%2Fuploads%2F2019%2F11%2Ftokenization.png&imgrefurl=https%3A%2F%2Fwww.kaggle.com%2Ffuntowiczmo%2Fhugging-face-tutorials-training-tokenizer&tbnid=lxKOQYuH9gFl1M&vet=12ahUKEwiq1PqTmaT2AhWFATQIHTvkBZwQMygRegUIARDdAQ..i&docid=k9xpL3UHasrkPM&w=424&h=182&q=images%20for%20text%20tokenization&client=safari&ved=2ahUKEwiq1PqTmaT2AhWFATQIHTvkBZwQMygRegUIARDdAQ)
+
+### Word Representation: Vectorization
 It is easier for any programming language to understand textual data in the form of numerical value. 
 So, for this reason, we need to vectorize all of the text so that it is better represented.
 We will specifically work with Hashing Vectorizer, TF-IDF and NMF methods to convert our text into numbers.
@@ -111,29 +111,26 @@ Our NMF matrix will decompose the document-term matrix into two smaller matrices
 The document-topic matrix (U) and the topic-term matrix (W) — each populated with unnormalized probabilities.
 ![This is an image](https://miro.medium.com/max/1400/1*ru1Ek9T3FjkehDkD8FZoHQ.jpeg)
 
-#### WordCloud
+### WordCloud
 * We will create WordClouds to see which words are the most frequent in a random sentence from the text
 
-#### Model Creation
+### Model Creation
 We will create models using nmf and wordvectors.
 
 * For nmf: 
-
+We will implement the nmf model on the wholde dataset and on top words then compare the results from both.
 
 * For word vectors:
-
 We will create a embeddings representation of each industry using spacy and find the closest industry using doc_1.similarity(industry_1)
 The TfidfVectorizer will transform text to feature vectors that can be used as input to estimator.
 We will then pick top words from the tfidf and use them to find the industry with the highest similarity to each employer.
 
 
-
-
-#### Ranking using Cosine Similarity
+### Ranking using Cosine Similarity
 What cosine similarly does is that it will mark all the documents as vectors of tf-idf tokens and measures the similarity in cosine space (the angle between the vectors. 
 ![This is an image](https://miro.medium.com/max/650/1*OGD_U_lnYFDdlQRXuOZ9vQ.png)
 
-##### Evaluation of text classification model
+## Evaluation of text classification model
 
 Since we are implementing unsupervised learning techniques, we cannot evaluate our model using evaluation metrics.
 

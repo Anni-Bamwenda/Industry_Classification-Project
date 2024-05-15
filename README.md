@@ -40,6 +40,7 @@ The function will take a string as an input and will return the clean version of
 We will also include lemmatization and stemming techniques to our dataset
 
 * Step 01: Creating Regex for emails, location, website/URLs
+  
 Short for regular expression; a Regex is useful in extracting information from any text by searching for one or more matches of a specific search pattern
 
 Sample of Website/URL Regex
@@ -50,6 +51,7 @@ Sample of Website/URL Regex
     print(remove_url(example))
     
 * Step 02: String Operations to remove punctuations and change text to lowercase
+  
 Some of our operations were:
 
     ```
@@ -67,6 +69,7 @@ Some of our operations were:
     ```
     
 * Step 03: Lemmatization and Stemming
+  
 We will look  into three stemming techniques namely snowball, porter stemmer and ARLStem Stemmer and use them to reduce all words to their stems.
 We will also perform lemmatization using nltk and spacy library.Unlike stemming, lemmatization reduces words to their base word,
 reducing the inflected words properly and ensuring that the root word belongs to the language.
@@ -74,9 +77,11 @@ reducing the inflected words properly and ensuring that the root word belongs to
 ![This is an image](https://miro.medium.com/max/1400/1*ES5bt7IoInIq2YioQp2zcQ.png)
 
 * Step 04: Stopwords
+  
 We will use NLTK Library to remove stop words by dividing  text into words and then remove the word if it exits in the list of stop words provided by NLTK.
 
 * Step 05: Tokenization
+  
 It is basically splitting/segmenting a text into words/sentences. It cuts a text into pieces called tokens.These tokens help in understanding the context and developing the model for the NLP.
 For this project, We will use word_tokenize to split the text into words.
 

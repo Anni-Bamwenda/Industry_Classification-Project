@@ -3,7 +3,8 @@
 ## Description
 
 The goal of the project is to predict industries using our employer_raw_data and industry_data
-ITo implement the project, we will learn different approaches to designing an nlp model that will rely on unclassified data. 
+
+To implement the project, we will learn different approaches to designing an nlp model that will rely on unclassified data. 
 We will discuss the basics of topic classification, unsupervised sentence classification, and vectorization of words. 
 
 Throughout this project, we will create the following code/system:
